@@ -23,8 +23,8 @@ def make_synthetic_renewables(days: int = 120, seed: int = 42) -> pd.DataFrame:
     df["month"] = df["timestamp"].dt.month
     df["is_weekend"] = (df["dayofweek"] >= 5).astype(int)
 
-    
-    seasonal = np.sin(2 * np.pi * (df.index / (24 * 365)))  
+    t = np.arange(len(df))
+    seasonal = np.sin(2 * np.pi * (t / (24 * 365))) 
     daily = np.sin(2 * np.pi * (df["hour"] / 24))          
 
     
@@ -38,7 +38,8 @@ def make_synthetic_renewables(days: int = 120, seed: int = 42) -> pd.DataFrame:
     clouds = rng.uniform(0.1, 0.8, size=len(df))  
     solar_shape = df["hour"].apply(_solar_shape).to_numpy()
     ghi_base = 800 * solar_shape * (0.55 + 0.45 * (1 + seasonal) / 2)  
-    df["ghi_wm2"] = (ghi_base * (1 - clouds)).clip(lower=0.0)
+    df["ghi_wm2"] = np.clip(ghi_base * (1 - clouds), 0.0, None)
+
 
     
     installed_wind_mw = 10000.0
