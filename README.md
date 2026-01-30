@@ -1,4 +1,3 @@
-# ozleyisyavuz-power-demand-forecast-tr
 # Renewable Generation Forecast TR — Rüzgâr/Güneş Üretimi + Belirsizlik (P10/P50/P90) + FastAPI + CI
 
 [![CI](https://github.com/<kullanici>/<repo>/actions/workflows/ci.yml/badge.svg)](https://github.com/<kullanici>/<repo>/actions/workflows/ci.yml)
