@@ -1,5 +1,6 @@
 # Renewable Generation Forecast TR — Rüzgâr/Güneş Üretimi + Belirsizlik (P10/P50/P90) + FastAPI + CI
- assets/<png2026-01-31 14.10.46>.png
+ ![Swagger UI](assets/swagger.png)
+
 
 > **Amaç:** Yenilenebilir enerji üretimi (rüzgâr + güneş) için saatlik tahmin üreten ve belirsizliği yönetmek amacıyla **P10 / P50 / P90** senaryolarını döndüren, API üzerinden kullanılabilir ve CI ile doğrulanmış uçtan uca bir demo sistem geliştirmek.
 
